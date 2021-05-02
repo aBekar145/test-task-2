@@ -1,0 +1,467 @@
+@import 'base/fonts';
+@import 'base/normalize';
+@import 'helpers/mixins';
+@import 'helpers/vars';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Roboto", "Arial", sans-serif;
+  color: $color-white;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 71.875rem;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 68.125rem;
+}
+
+// Header start
+
+.header {
+  padding: 2.5rem 0;
+  width: 100vw;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  &__inner {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    &-item {
+      margin-left: 3.4375rem;
+      &-link {
+        @include link-menu();
+        color: $color-white;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          color: $bg-grey-dark;
+          transition-duration: 0.5s;
+        }
+        &:hover svg .cls-1{
+          fill: $bg-grey-dark;
+          transition-duration: 0.5s;
+        }
+      }
+    }
+  }
+}
+// Header end
+// Main start
+.our-clothing {
+  padding:  19.0625rem 0 2.4rem;
+  height: 100vh;
+  background-color: $bg-grey;
+  background: url(../images/img/bg-Livello.png) center center / cover no-repeat ;
+  &__inner-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__main-title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0.625rem;
+    @include h1();
+  }
+  &__description {
+    margin-bottom: 25.1875rem;
+    max-width: 35.3125rem;
+    text-align: center;
+    @include paragraph-main();
+  }
+  &__button-arrow-down {
+    justify-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    &:hover svg .cls-1{
+      fill: $bg-grey-dark;
+      transition-duration: 0.5s;
+    }
+  }
+}
+
+.goods {
+  background-color: $bg-grey-light;
+}
+
+.filter-block {
+  padding: 2.875rem 0;
+  background-color: $bg-grey-light;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__inner {
+    display: flex;
+  }
+
+  &__button {
+    @include button();
+    color: $color-grey-3;
+  }
+}
+
+.choose {
+  margin-right: 2.5rem;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+  display: flex;
+  align-items: center;
+  &__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+  }
+  &__subtitle {
+    display: inline-block;
+    line-height: 22px;
+    padding-left: 2.75rem;
+    @include checkbox-text();
+    color: $color-dark-1;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      color: $bg-grey-dark;
+      transition-duration: 0.5s;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 3px solid $color-grey-2;
+      background-color: $color-white;
+      border-radius: 5px;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      z-index: 1;
+      transition: border .1s linear;
+    }
+  }
+  &__checkbox:checked + &__subtitle::before {
+    border-color: $color-grey;
+    border-radius: 5px;
+    background: url(../images/svg/checkbocks-icon.svg) center no-repeat;
+  }
+}
+
+.cards {
+  padding: 3.125rem 0;
+  background-color: $color-white;
+  &__list {
+    margin: 0 -33px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    &-item {
+      padding: 0 33px 50px;
+      max-width: 33.333%;
+      flex: 0 0 33.333%;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  &:hover {
+    box-shadow: 0 0 0 0.3125rem $bg-grey-dark;
+    border-radius: 0.1875rem;
+    transition-duration: 0.5s;
+  }
+  &__link {
+    display: block;
+    &-img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+  &__select {
+    display: block;
+    @include card-size();
+    color: $color-dark-2;
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 10;
+  }
+  &__subtitle {
+    @include card-name();
+    color: $color-grey;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    z-index: 10;
+    text-transform: uppercase;
+  }
+  &__price {
+    display: block;
+    @include card-price();
+    color: $color-dark-2;
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    z-index: 10;
+  }
+}
+// Main end
+// Footer start
+
+.commerce-information {
+  padding: 1.5rem 0;
+  background-color: $bg-grey-dark-2;
+  &__block {
+    display: flex;
+    align-items: center;
+  }
+  &__subtitle {
+    margin-left: 1.25rem;
+    @include h3();
+  }
+}
+.footer-main-block {
+  padding: 6.875rem 0;
+  background-color: $bg-grey-dark-4;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.trekking-content {
+  max-width: 20rem;
+  &__title {
+    margin-bottom: 0.9375rem;
+    @include h2();
+    text-transform: uppercase;
+  }
+  &__description {
+    @include paragraph-footer();
+    text-transform: uppercase;
+    text-align: left;
+  }
+}
+
+.navigation-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  &__list {
+    margin-bottom: 0.625rem;
+    display: flex;
+    list-style: none;
+    &-item {
+      position: relative;
+      margin-left: 0.625rem;
+      &-link {
+        text-decoration: none;
+        &-span {
+          display: block;
+          @include link-menu-footer();
+          text-transform: uppercase;
+          color: $color-white;
+          cursor: pointer;
+          &:hover {
+            color: $bg-grey-dark;
+            transition-duration: 0.5s;
+          }
+        }
+      }
+      &::before {
+        content: "";
+        width: 0.125rem;
+        height: 0.75rem;
+        background-color: $bg-grey-dark-5;
+        position: absolute;
+        top: 0.25rem;
+        left: -0.3125rem;
+      }
+      &:first-child::before {
+        display: none;
+      }
+    }
+  }
+}
+// Footer end
+
+// adaptive
+@media screen and (max-width: 1160px) {
+  .wrapper {
+    padding: 0 1.25rem;
+    max-width: 1160px;
+  }
+  .wrap {
+    padding: 0 1.25rem;
+    max-width: 1100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    max-width: 64rem;
+  }
+  .wrap {
+    max-width: 60.25rem;
+  }
+  .our-clothing {
+    &__main-title {
+      font-size: 3rem;
+    }
+  }
+  .cards {
+    &__list {
+      &-item {
+        padding: 1.25rem 5.5rem;
+        max-width: 50%;
+        flex: 0 0 50%;
+      }
+    }
+  }
+  .card {
+    &__subtitle {
+      font-size: 1rem;
+    }
+    &__price {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 1.25rem;
+    max-width: none;
+  }
+  .wrap {
+    padding: 0 1.25rem;
+    max-width: none;
+  }
+  .cards {
+    &__list {
+      flex-wrap: wrap;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-item {
+        padding: 20px 22px;
+        max-width: none;
+        flex: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 764px) {
+  .filter-block {
+    &__wrapper {
+      display: block;
+    }
+    &__inner {
+      flex-direction: column;
+    }
+    &__wrapper-checkbox {
+      margin-bottom: 1.25rem;
+    }
+    &__wrapper-checkbox-subtitle {
+      top: 0.625rem;
+      &::before {
+        top: -0.25rem;
+      }
+      &::after {
+        top: 0.25rem;
+      }
+    }
+  }
+
+  .choose {
+    margin: 20px 0;
+    &__subtitle {
+      &::before {
+        top: -5px;
+      }
+    }
+  }
+  .our-clothing {
+    &__main-title {
+      font-size: 2.5rem;
+      max-width: 18.7518rem;
+    }
+  }
+  .cards {
+    &__list {
+
+      &-item {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+  .footer-main-block {
+    padding: 3.875rem 0;
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .trekking-content {
+    margin-bottom: 1.25rem;
+    max-width: 100%;
+  }
+  .navigation-footer {
+    align-items: center;
+    max-width: 100%;
+  }
+  .card {
+    &__subtitle {
+      font-size: 1rem;
+    }
+    &__price {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px){
+  .navigation {
+    &__list {
+      flex-direction: column;
+      &-item {
+        margin-bottom: 0.3125rem;
+      }
+    }
+  }
+  .our-clothing {
+    &__main-title {
+      font-size: 2rem;
+    }
+  }
+}

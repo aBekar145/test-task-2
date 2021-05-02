@@ -1,0 +1,109 @@
+@mixin link-menu {
+  font: {
+    family: Roboto;
+    size: 1.125rem;
+  }
+  line-height: 130%;
+}
+
+@mixin link-menu-footer {
+  font: {
+    family: Roboto;
+    size: 0.875rem;
+  }
+  line-height: 160%;
+}
+
+@mixin h1 {
+  font: {
+    family: Roboto;
+    size: 3.75rem;
+  }
+  line-height: 150%;
+  letter-spacing: 0.21rem;
+}
+
+@mixin h2 {
+  font: {
+    family: Roboto;
+    size: 1.25rem;
+  }
+  line-height: 150%;
+  letter-spacing: 0.21rem;
+}
+
+@mixin h3 {
+  font: {
+    family: Roboto;
+    size: 1.125rem;
+  }
+  line-height: 150%;
+  letter-spacing: 0.1rem;
+}
+
+@mixin paragraph-main {
+  font: {
+    family: Roboto;
+    size: 1.25rem;
+  }
+  line-height: 120%;
+  letter-spacing: 0.1rem;
+}
+
+@mixin paragraph-footer {
+  font: {
+    family: Roboto;
+    size: 0.625rem;
+  }
+  line-height: 20px;
+  letter-spacing: 0.1rem;
+}
+
+@mixin checkbox-text {
+  font: {
+    family: Roboto;
+    size: 1.125rem;
+  }
+  line-height: 120%;
+  letter-spacing: 0.1rem;
+}
+
+@mixin card-name {
+  font: {
+    family: Roboto;
+    size: 1.125rem;
+  }
+  line-height: 100%;
+}
+
+@mixin card-price {
+  font: {
+    family: Roboto;
+    size: 1.375rem;
+  }
+  line-height: 100%;
+}
+
+@mixin card-size {
+  font: {
+    family: Roboto;
+    size: 1.125rem;
+  }
+  line-height: 100%;
+}
+
+@mixin button() {
+  padding: 1rem 0.625rem;
+  font-size: 0.875rem;
+  line-height: 120%;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition-duration: 0.5s;
+  background-color: $bg-grey-dark;
+  &:hover {
+    color: $color-white;
+    background-color: $bg-grey-dark-5;
+  }
+}
